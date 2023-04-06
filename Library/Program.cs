@@ -1,4 +1,5 @@
 using Library.Data;
+using Library.Middleware;
 using Library.Repositories.Books;
 using Library.Repository;
 using Library.Services;
@@ -28,6 +29,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseMiddleware<ExceptionCatcherMiddleware>();
 
 app.UseHttpsRedirection();
 
